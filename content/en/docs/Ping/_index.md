@@ -46,3 +46,6 @@ There are following CLI commands relate to ping test:
 * Controller CLI:
   *`list`: list instance status, which include ping stats
   *`clearping`: clear ping stats
+
+## Limitation
+The built-in ping is currently not designed for big load testing, which could cause inaccurate result.

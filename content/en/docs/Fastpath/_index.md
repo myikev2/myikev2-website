@@ -108,3 +108,7 @@ root@myikev2:~# ip -6 route list table 330
 ```
 
 In case of LAN-to-LAN tunnel, for each TS in TSr, MyIKEv2 will create a route with the smallest prefix length that covers the address range in the TS;
+
+## Limitations
+
+* currently, dual stack(IPv4 + IPv6) is not supported in a single CHILD_SA 
