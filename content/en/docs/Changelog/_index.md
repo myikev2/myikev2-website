@@ -5,7 +5,12 @@ weight: 1000
 description: >
   What's new?
 ---
+## ver 4.21 10/17/2022
+
+- change default IKEv2 fragmentation MTU to 1100
+
 ## ver 4.2 10/5/2022
+
 - use netlink as most of fastpath API calls, which increase the fastpath setup performance
 - fix some bugs related to eapsnoop
 - RA client IKE_AUTH request now include CFG_ATTR_INTERNAL_IP4_NETMASK

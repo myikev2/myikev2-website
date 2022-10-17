@@ -210,8 +210,10 @@ ikeconf:
 # enable IKEv2 fragmentation 
   enablefragment: false
 
-# MTU for IKEv2 fragmentation 
-  mtu: 1400
+# MTU for IKEv2 fragmentation
+# note: the MTU here is max size of clear IKEv2 payloads, 
+# so the result IKEv2 packet after fragmentation will be bigger than this value with IKEv2 encap/encryption/IP encap overheads
+  mtu: 1100
 
 # IKEv2 message reassembly timeout 
   reassembletimeout: 30s  
