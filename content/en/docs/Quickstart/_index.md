@@ -91,4 +91,4 @@ see [Example Setup](../examplesetup/)
 
 ## Multiple Test Instance 
 
-Beside the running single instance as described above, MyIKEv2 also supports test setup uses multiple instances, running on a single or multiple servers, see [controller doc](../DaemonAndController/) for details
+Beside the running single instance as described above, MyIKEv2 also supports test setup uses multiple instances, running on a single or multiple servers, see [controller doc](../controller/) for details

@@ -5,6 +5,10 @@ weight: 1000
 description: >
   What's new?
 ---
+## ver 4.22 10/27/2022
+
+- fix a bug that could cause logging to stop by certain formatted payload 
+
 ## ver 4.21 10/17/2022
 
 - change default IKEv2 fragmentation MTU to 1100
