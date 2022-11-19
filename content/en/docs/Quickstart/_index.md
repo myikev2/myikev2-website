@@ -47,6 +47,10 @@ MyIKEv2 provides a single executable binary for Linux:
 
     note: <max-value> could be obtained via command `ethtool -g <inteface-name>`
     ```
+    * in case of radius is used during authentication, especially EAP authentication with multiple round-trips, make sure radius server has enough computing resource and I/O resource, e.g. above I/O tweaking also need to apply to radius server. 
+      
+      * in case eap-file, make sure the interface where the radius server listening address is on has enough I/O.
+
     * use biggest MTU available for network link between MyIKEv2 and peer (unless you want to test fragmentation)
 
 * since v1.2, MyIKEv2 require libpcap to run; if libpcap is already installed, but you still get error msg like " error while loading shared libraries: libpcap.so.x.y: cannot open shared object file: No such file or directory", then just create a symbol link "libpcap.so.x.y" to installed libpcap.so file

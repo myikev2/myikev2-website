@@ -5,6 +5,14 @@ weight: 1000
 description: >
   What's new?
 ---
+
+## ver 4.3 11/18/2022
+
+- improve performance of netlink based fastpath
+- fix a bug cause wrong eapradiusss could cause loading radius pcap to panic
+- change default test running time to 10 min
+
+
 ## ver 4.22 10/27/2022
 
 - fix a bug that could cause logging to stop by certain formatted payload 
