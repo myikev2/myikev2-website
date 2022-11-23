@@ -10,7 +10,7 @@ description: >
 MyIKEv2 is command line based IKEv2/IPsec testing tool, it has following CLI commands:
 
 ```
-MyIKEv2, an IKEv2/IPsec test tool; Ver 4.0
+MyIKEv2, an IKEv2/IPsec test tool; Ver 4.4
 https://www.myikev2.net
 ======================
 flag provided but not defined: -?
@@ -59,7 +59,6 @@ default: export default setup or fr users file
   -t string
         export type, conf or fr (default "conf")
 
-
 daemon: start myikev2 test daemon
   -ip string
         listening addr of daemon (default "0.0.0.0")
@@ -77,6 +76,16 @@ control cli: enter myikev2 controller interactive CLI
   -o    override existing test instance (default true)
 
 control example: create an example recipe file
+
+echosvr: start UDP echo svr
+  -count uint
+        number of listening IP (default 1)
+  -port int
+        listening port (default 9922)
+  -startip string
+        starting listening IP
+  -step uint
+        step (default 1)
 ```
 
 ## myikev2 exec 
@@ -139,12 +148,16 @@ bob2    Cleartext-Password := "bob"
 
 ## myikev2 daemon
 
-run MyIKEv2 as daemon, which could be controlled by a controller, see [controller doc](../DaemonAndController/) for details
+run MyIKEv2 as daemon, which could be controlled by a controller, see [controller doc](../Controller/) for details
 
 ## myikev2 control cli
 
-Enter MyIKEv2 controller interactive CLI, see [controller doc](../DaemonAndController/) for details
+Enter MyIKEv2 controller interactive CLI, see [controller doc](../Controller/) for details
 
 ## myikev2 control example
 
-creates example controller configuration and recipe files, see [controller doc](../DaemonAndController/) for details
+creates example controller configuration and recipe files, see [controller doc](../Controller/) for details
+
+## myikev2 echosvr
+
+run MyIKEv2 echo server, see [ping doc](../Ping/) for details

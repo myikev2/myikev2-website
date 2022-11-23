@@ -287,11 +287,17 @@ ikeconf:
 # for example, could be sth like "1.1.1.1:1812"
   eapradiussvr: ""
 
-# client role only
+# in case of client role:
 # the radius attr type DUT uses to identify a EAP RADIUS auth session
 # used by eap-file
 # for example, could be 31 (which is Calling-Station-Id)
+# in case of gateway role, gateway will insert the specified attribute with value as corresponding's IKESA's own SPI, into access-request
   eapradiusid: 31
+
+# gateway role only
+# if true, the gateway sends EAP-Start to radius server at the beginning of EAP exchanges,
+# otherwise, sends EAP-ID/Response with User-Name to radius server first
+  eapsendstart: true
 
 # local IKEv2 ID payload, supports following:
 # client-src-addr: using own tunnel address, type ID_IPV4_ADDR or ID_IPV6_ADDR
@@ -483,6 +489,13 @@ pingconf:
 # if true, the first address of negotiated TSi/TSr will be used as
 # src/dst address of ICMP packet
   autoaddr: false
+
+# type of ping, choice of icmp or udp
+# in case of udp, myikev2 echosvr need to be used as the target
+  ptype: icmp
+
+# the UDP port used by UDP ping (as both src and dst)
+  udpport: 9922
 
 # if true, myikev2 will auto add ping's src address to the interface specified by virtualipif, 
 # can't be enabled for client remote-access tunnel

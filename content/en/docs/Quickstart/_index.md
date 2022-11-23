@@ -32,7 +32,7 @@ MyIKEv2 provides a single executable binary for Linux:
 
 * for scale test, you need to change following linux kernel settings:
 
-    * increase number of open file: ```ulimit -n <xxx>```; xxx must be bigger than number of tunnels
+    * increase number of open file: ```ulimit -n <xxx>```; xxx must be bigger than number of tunnels and sockets opened by MyIKEv2 (note: built-in ping opens additional sockets). 
     * increase UDP buffer size:
     ```
     sysctl -w net.core.rmem_max=26214400
@@ -40,6 +40,18 @@ MyIKEv2 provides a single executable binary for Linux:
     sysctl -w net.core.wmem_max=26214400
     sysctl -w net.core.wmem_default=26214400
     ```
+    
+    * increase ARP entries limits (run out ARP entries could cause error msg like `sendto: invalid argument`)
+    ```
+    sysctl -w net.ipv4.neigh.default.gc_thresh1 = 10240
+    sysctl -w net.ipv4.neigh.default.gc_thresh2 = 20480
+    sysctl -w net.ipv4.neigh.default.gc_thresh3 = 40960
+    sysctl -w net.ipv6.neigh.default.gc_thresh1 = 10240
+    sysctl -w net.ipv6.neigh.default.gc_thresh2 = 20480
+    sysctl -w net.ipv6.neigh.default.gc_thresh3 = 40960    
+
+    ```
+    
     * increase NIC TX/RX queue size:
     ```
     ethtool -G <interface-name> tx <max-value> 

@@ -44,6 +44,7 @@ myikev2(As IKEv2 EAP client/peer) --- DUT (as EAP Authenticator ) --- myikev2(as
 #### Notes
 
 * All tunnels define in a setupfile uses same EAP messages from pcap, so they all derive same MSK
+* In case of a MyIKEv2 client with eap-file config inter-op with a MyIKEv2 gateway, make sure the gateway uses same eapradiusid as the client
 
 
 ### eap-snoop
@@ -191,6 +192,8 @@ Following options in setup file are used in this case:
 
 * eapradiussvr: RADIUS sever address
 * eapradiusss: RADIUS share secret
+* eapradiusid: the radius attribute type that's used to identify the session, gateway will insert the specified radius attribute with corresponding IKE_SA's own SPI as value in access-request
+* eapsendstart: if true, the gateway sends EAP-Start to radius server at the beginning of EAP exchanges; otherwise, sends EAP-ID/Response with User-Name to radius server first 
 
 Other eap options in setup file are ignored; 
 

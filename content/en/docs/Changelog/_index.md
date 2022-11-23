@@ -6,6 +6,11 @@ description: >
   What's new?
 ---
 
+## ver 4.4 11/22/2022
+
+- add UDP ping
+- enhanced client eap-file, and gateway EAP implementations, more stable and performant
+
 ## ver 4.3 11/18/2022
 
 - improve performance of netlink based fastpath
