@@ -76,4 +76,4 @@ There are following shell CLI commands relate to ping test:
   *`clearping`: clear ping stats
 
 ## Limitation
-The built-in ping is currently not designed for big load testing, which could cause inaccurate result.
+The built-in ping is currently not designed for big load testing, which could cause inaccurate result, specially icmp ping.

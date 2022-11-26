@@ -45,6 +45,7 @@ myikev2(As IKEv2 EAP client/peer) --- DUT (as EAP Authenticator ) --- myikev2(as
 
 * All tunnels define in a setupfile uses same EAP messages from pcap, so they all derive same MSK
 * In case of a MyIKEv2 client with eap-file config inter-op with a MyIKEv2 gateway, make sure the gateway uses same eapradiusid as the client
+* In case of scale test, the `setupinterval` can't be too small, as a rule of thumb should be >=100ms
 
 
 ### eap-snoop

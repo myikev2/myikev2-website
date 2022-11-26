@@ -6,6 +6,10 @@ description: >
   What's new?
 ---
 
+## ver 4.41 11/25/2022
+
+- fix a memory leak bug when using UDP ping in scale test
+
 ## ver 4.4 11/22/2022
 
 - add UDP ping
