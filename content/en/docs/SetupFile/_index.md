@@ -310,6 +310,23 @@ ikeconf:
 # the default type is ID_FQDN
   myid: client-src-addr
 
+
+# client tunnel only
+# This is to configure IDr in IKE_AUTH request message
+# supports following:
+# peer-addr: using configured peer address
+# an IPv4 or IPv6 address, type ID_IPV4_ADDR or ID_IPV6_ADDR
+# a RFC822 address (e.g. email addr), type ID_RFC822_ADDR
+# a FQDN, type ID_FQDN 
+# the default type is ID_FQDN
+# if not spcified, then there is no IDr in IKE_AUTH request message
+  peerid: ""
+
+# client tunnel only
+# if set true, match recevied IDr in IKE_AUTH response with configured peerid
+# fail the tunnel setup if they don't match
+  matchpeerid: false
+
 # The path to where CA certificates are stored;
 # the certificate must be in PEM format
 # madantory if PKI related authentication is used
@@ -515,6 +532,9 @@ pingconf:
 
 # interval between each ping ECHO request 
   interval: 1s
+
+# interval between creating two consecutive ping tasks
+  setupinterval: 10ms
 
 # size of ping; the actual IP packet size is bigger than this
   pktlen: 64

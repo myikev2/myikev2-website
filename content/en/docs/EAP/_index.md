@@ -24,7 +24,12 @@ eap-file works like following:
 ```
 myikev2(As IKEv2 EAP client/peer) --- DUT (as EAP Authenticator ) --- myikev2(as RADIUS EAP server)
 ```
+so this means DUT must enable EAP RADIUS feature as defined in RFC3579.
+
+
 * MyIKEv2 will extract the EAP-Message from each RADIUS packet in pcap file, and pass it through DUT via standard IKEv2 EAP authentication procedure.
+  * the EAP-Message in request message in pcap file is used by MyIKEv2 as IKEv2 EAP payload to DUT
+  * the response message in pcap file is used by MyIKEv2 radius server to respond to DUT
 
 
 ### Setup eap-file
@@ -38,11 +43,14 @@ myikev2(As IKEv2 EAP client/peer) --- DUT (as EAP Authenticator ) --- myikev2(as
 * eapfile: the path to the pcap file
 * eapradiusss: radius shared secret of eapfile; DUT also needs to use this as radius share secret
 * eapradiussvr: the listening address of radius server; DUT need to be configured to use this as radius server
-* eapradiusid: the radius attribute type that DUT uses to uniquely identify a radius auth session in access-request; could be e.g, "44" (acct-session-id) or "31" (calling-station-id;)
+* eapradiusid: the radius attribute type in message sent by DUT to radius server that myikev2 radius server uses to **uniquely** identify a radius auth session in access-request; 
+  * it has to be unique across session, could be e.g, "44" (acct-session-id) or "31"(calling-station-id); 
+  * this is NOT the attribute in RADIUS request message of the pcap file, this is from DUT.
 * myid: it might be necessary to set this to EAP identity
 
 #### Notes
 
+* for RADIUS **request** messages in the pcap file, only EAP-Message attribute is used, other are ignored.
 * All tunnels define in a setupfile uses same EAP messages from pcap, so they all derive same MSK
 * In case of a MyIKEv2 client with eap-file config inter-op with a MyIKEv2 gateway, make sure the gateway uses same eapradiusid as the client
 * In case of scale test, the `setupinterval` can't be too small, as a rule of thumb should be >=100ms

@@ -70,7 +70,7 @@ ikeconf:
   ratunnel: true
   childlist:
   -
-    liftime: 10m
+    lifetime: 60m
 ```
 
 ## Remote-Access Tunnel with Certificate Authentication

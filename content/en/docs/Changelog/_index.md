@@ -5,6 +5,23 @@ weight: 1000
 description: >
   What's new?
 ---
+## ver 4.6 4/14/2023
+
+- no longer require libpcap or a specific version of glibc
+- fix a bug of eap-file
+- fix some bugs on fastpath
+
+
+
+## ver 4.5 2/27/2022
+
+- add peerid/matchpeerid for client tunnel
+
+## ver 4.42 11/25/2022
+
+- fix a bug that might cause CHILD_SA rekey fail on fastpath in scale test
+- add setupinterval configuration for ping
+
 
 ## ver 4.41 11/25/2022
 

@@ -36,6 +36,7 @@ pingconf:
 * srcaddr: specifies the ping source address for 1st tunnel; if empty, it means it let OS automatically select source; leave empty for RA tunnel
 * srcstep: the number of step increase for src addr of each following tunnel; only applies when srcaddr is not empty
 * interval: interval between send ping ECHO request
+* setupinterval: interval between creating two consecutive ping tasks; shouldn't be too small in scale test to avoid all ping task sending at the same time.
 * pktlen: the size of ping packet send; note: the actual IP pkt size is bigger than this, since this only specifies ping payload size.
 * maxlossrate: the max allowed packet loss rate in percentage, a float number between 0-100; if the packet loss rate exceed this value, then an error event will be generated;
 * holdtime: the amount of time system waits before start ping, after all tunnel are created (as client role) or gateway is created (as gateway role)
