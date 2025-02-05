@@ -18,6 +18,7 @@ It supports following features:
     - Orchestrated setup: multiple instances on one or multiple servers, orchestrated by a central controller
     - gRPC based API support for test automation
     - Capable of creating large number of concurrent IPsec tunnels; **100k** tunnels tested on single 10 core Intel Xeon CPU; 
+- Quantum safe: RFC8784
 - Full IPv4/IPv6 combinations support
 - Both Tunnel and Transport mode support
 - TCP Encapsulation support (RFC8229)

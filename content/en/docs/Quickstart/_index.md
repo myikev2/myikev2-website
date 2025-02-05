@@ -77,7 +77,7 @@ For each test case:
  1. use command ```myikev2 exec -f <setup_file_name>``` to run the test; for details of CLI commands, refer to [CLI Usage](../cliusage)
     * adding `-i` parameter like ```myikev2 exec -i -f <setup_file_name>``` will launch the [interactive shell](../shell/), where MyIKEv2 shell command could used to monitor the running test. 
 
-Note: before running IKEv2 and create IPsec tunnel, if ```-flush=false``` is not specified, MyIKEv2 does following to facilitate test based on the settings in setup file:
+Note: before running IKEv2 and create IPsec tunnel, if ```--flush=false``` is not specified, MyIKEv2 does following to facilitate test based on the settings in setup file:
 
 * flush and add following address on specified interface ```bindifname```:
   * specified tunnel address (based on ```startclntaddr``` , ```numberoftunnels```, ```mobike``` and ```mobikeaddrpertunnel```) 

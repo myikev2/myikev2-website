@@ -5,6 +5,25 @@ weight: 1000
 description: >
   What's new?
 ---
+
+## ver 5.0 2/3/2025
+- reworked CLI, comply to POSIX/GNU-style --flags, now also support shell auto completion; there are some NBC in CLI parameter
+- add support RFC8784 
+- add compact command to remove default setting in a setup file 
+
+
+## ver 4.7 1/26/2024
+
+- reworked CLI and YAML file support
+- adding HASH_ALG_NOTIFY value output in debug
+- fix a bug when reply to CHILD_SA rekey in transport mode, the USE_TRANSPORT notify is missing
+- now HASH_ALG notify debug output shows actual ALG name
+- now when receiving a IKE packet contains non-ESP marker on conn where NAT is not enabled is supported
+- now GW sendIKESAINITResp use the the conn to send response same as where the request is received
+- fix dshash related bug
+- fix pfs group related bugs
+- fix a bug where MyIKEv2 fragment IKE_SA_INTI pkt, which is not suppose to do
+
 ## ver 4.6 4/14/2023
 
 - no longer require libpcap or a specific version of glibc

@@ -49,17 +49,16 @@ To use UDP ping, myikev2 echo server need to be running as ping target, which wi
 ```
 echo server could be started vi command `myikev2 echosvr`.
 ```
-echosvr: start UDP echo svr
-  -count uint
-        number of listening IP (default 1)
-  -port int
-        listening port (default 9922)
-  -startip string
-        starting listening IP
-  -step uint
-        step (default 1)
+= echosvr: start UDP echo server
+    - count: number of listening address
+        default:1
+    - port: listening port
+        default:9922
+    - startip: starting listening addr
+    - step: step
+        default:1
 ```
-the echo server listening one or multiple addresses with the specified port, the step specifies delta between two consecutive addresses, for example command `myikev2 echosvr -startip 1.1.1.1 -count 3 -port 3344 -step 2` will create a server listening on 3 addresses 1.1.1.1, 1.1.1.3 and 1.1.1.5 with listening port 3344.
+the echo server listening one or multiple addresses with the specified port, the step specifies delta between two consecutive addresses, for example command `myikev2 echosvr --startip 1.1.1.1 --count 3 --port 3344 --step 2` will create a server listening on 3 addresses 1.1.1.1, 1.1.1.3 and 1.1.1.5 with listening port 3344.
 
 note: echo server will automatically add listening addresses to interface lo, so user doesn't need to add them manually, it also means using this command requires root privilege. 
 

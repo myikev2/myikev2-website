@@ -141,8 +141,8 @@ instancelist:
 ## Usage
 1. create all the configuration files on controller server
 1. provision networking as described above
-1. run `myikev2 daemon -ip <listening_addr> -port <listening_port>` on each daemon server
-1. run `myikev2 control cli` on controller server to start the interactive controller CLI
+1. run `myikev2 daemon --listen <addr:port>` on each daemon server
+1. run `myikev2 control cli -c <config_file>` on controller server to start the interactive controller CLI
 1. use the controller CLI to manage the test case
 
 ## Controller CLI

@@ -185,11 +185,13 @@ ikeconf:
 
 #### Build eapol_test
 
-1. download wpa_supplicant source from https://w1.fi/releases/wpa_supplicant-2.7.tar.gz
-1. tar xvf wpa_supplicant-2.7.tar.gz
-1. cd wpa_supplicant-2.7/wpa_supplicant
-1. wget https://raw.githubusercontent.com/FreeRADIUS/freeradius-server/master/scripts/travis/eapol_test/config_linux -O .config
+1. download wpa_supplicant source from https://w1.fi/releases/wpa_supplicant-2.10.tar.gz
+1. tar xvf wpa_supplicant-2.10.tar.gz
+1. cd wpa_supplicant-2.10/wpa_supplicant
+1. wget https://github.com/FreeRADIUS/freeradius-server/raw/release_3_2_5/scripts/ci/eapol_test/config_linux -O .config
 1. make eapol_test
+    
+    - note: to build a statically link, update the wpa_supplicant/Makefile and add `-static` in `eapol_test` entry
 
 ## Gateway Role
 

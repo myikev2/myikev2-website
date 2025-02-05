@@ -430,6 +430,16 @@ disallownat: false
 # peer port for TCP encap
   peertcpport: 4500
 
+# ppk (Post-quantum Preshared Keys. rfc8784) configuration 
+  ppk:
+      # ppk-id, ascii string
+      id: ""
+      # ppk value, prefix 0x for hex, 0s for base64, no prefix means ascii
+      value: ""
+      # if true, then ppk must be negotiated for IKEv2 negotiation to succeed 
+      ppkrequired: false
+
+
 
 # a list of CHILD SA config, could be one or mulitple set of following config
   childlist:
