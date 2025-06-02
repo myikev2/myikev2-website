@@ -53,7 +53,7 @@ https://www.myikev2.net
     --eedir: EE certs folder
     --eekeytype: the EE key type/curve and key length, like rsa:2048, ecdsa:p-384 or ed25519
         default:rsa:2048
-    --eeprefix: prefix to EE cert's subject's CN
+    --eeprefix: prefix to EE cert's subject's CN, template when contains '&d' and '&d' will be replaced with index
   = daemon: start myikev2 test daemon
     --lf: log file path
         default:myikev2_daemon.log
@@ -152,6 +152,11 @@ Basic usage is `myikev2 createpki -c <number_of key/cert> --cadir <CA_certs_dirn
 `--keytype {rsa:<keylen>|ecdsa:<curve>|ed25519}` is used to specify the type of key
 
 `-l <number>` is used to specify the number of sub-CA in the CA chain, by default is 1, could be 0;
+
+### customize EE certificate subject CommonName
+Generated EE certificate subject's CN could be customized via `--eeprefix <str>`:
+- if `<str>` contains `&d`, then it is used as template for CN, and `&d` will be replaced by the index, for example: with `--eeprefix client-&d`, the `ee-19_myikev2.cert`'s subject CN would be `client-19`
+- if `<str>` doesn't contain `&d`, then it is used as prefix, followed by `ee-<x>_myikev2`, for example: with `--eeprefix client-`, the `ee-19_myikev2.cert`'s subject CN would be `client-ee-19_myikev2`
 
 ## myikev2 default
 

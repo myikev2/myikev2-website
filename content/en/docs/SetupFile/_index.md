@@ -304,9 +304,11 @@ ikeconf:
 # eapol-test-conf: using identity of eapol_test config
 # eapusepcap: use the user-name in 1st access-request pkt in eapfile 
 # cert-dn: use assigned certificate Subject, type ID_DER_ASN1_DN
+# cert-subject-cn: use assigned certificate subject's common name, type is either ID_FQDN or ID_RFC822_ADDR
 # an IPv4 or IPv6 address, type ID_IPV4_ADDR or ID_IPV6_ADDR
 # a RFC822 address (e.g. email addr), type ID_RFC822_ADDR
 # a FQDN, type ID_FQDN 
+# in case of email or FQDN, if value contains `&d`, `&d` will be replaced with tunnel index (client role only)
 # the default type is ID_FQDN
   myid: client-src-addr
 

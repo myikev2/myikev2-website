@@ -5,8 +5,18 @@ weight: 1000
 description: >
   What's new?
 ---
+## ver 5.1.0 6/2/2025
+
+- add cert-subject-cn for myid
+- add `&d` support for myid
+- add `&d` support eeprefix of createpki command
+
+## ver 5.0.1 3/21/2025
+
+- fixed a bug that cause compact command an no-op
 
 ## ver 5.0 2/3/2025
+
 - reworked CLI, comply to POSIX/GNU-style --flags, now also support shell auto completion; there are some NBC in CLI parameter
 - add support RFC8784 
 - add compact command to remove default setting in a setup file 
